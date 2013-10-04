@@ -82,7 +82,7 @@ module Product
     end
 
     def products_of_adjacent_groups
-      @products_of_adjacent_groups = self.all_adjacent_groups.map { |group| group.inject(&:*) }
+      @products_of_adjacent_groups ||= self.all_adjacent_groups.map { |group| group.inject(&:*) }
     end
   end
 end
